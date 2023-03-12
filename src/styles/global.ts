@@ -48,4 +48,18 @@ export default createGlobalStyle`
       outline: none;
     }
   }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    background-color: ${(props) => props.theme.colors.black700};
+    transition: background-color: 5000s ease-in-out 0s;
+    -webkit-text-fill-color: ${(props) => props.theme.colors.white};
+    ::-webkit-input-placeholder {
+      color: ${(props) => props.theme.colors.gray300};
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
 `;
