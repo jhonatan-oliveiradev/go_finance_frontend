@@ -8,5 +8,6 @@ export const darkTheme = {
 		black800: "#171616",
 		black700: "#1E1E1E",
 		white: "#F3F3F3",
+		gray300: "#4D4747",
 	},
 };

@@ -12,14 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
 		<ThemeProvider theme={darkTheme}>
 			<Head>
 				<title>Go Finance | Suas finanças em um só lugar.</title>
-				<link
-					rel="icon"
-					type="image/png"
-					sizes="16x16"
-					href="../assets/favicon.png"
-				/>
-				<meta name="msapplication-TileColor" content="#ffffff" />
-				<meta name="theme-color" content="#ffffff" />
+				<link rel="icon" href="../../public/favicon.ico" type="image/x-icon" />
 				<meta
 					name="description"
 					content="Acesse sua conta e veja suas finanças em um só lugar."
