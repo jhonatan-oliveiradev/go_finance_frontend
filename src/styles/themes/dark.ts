@@ -9,5 +9,8 @@ export const darkTheme = {
 		black700: "#1E1E1E",
 		white: "#F3F3F3",
 		gray300: "#4D4747",
+		error: "#CB3F3F",
+		danger: "#ffce21",
+		success: "#65d36e",
 	},
 };

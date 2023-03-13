@@ -15,7 +15,7 @@ export const Content = styled.div`
 	justify-content: center;
 	gap: 2rem;
 	width: 50%;
-	height: 70%;
+	height: 80%;
 	background-color: ${(props) => props.theme.colors.black900};
 	border-radius: 1rem;
 	box-shadow: 0 0 14px ${(props) => props.theme.colors.black900};
@@ -52,4 +52,9 @@ export const Content = styled.div`
 			}
 		}
 	}
+`;
+
+export const ErrorMessage = styled.span`
+	color: ${(props) => props.theme.colors.error};
+	font-size: 0.875rem;
 `;

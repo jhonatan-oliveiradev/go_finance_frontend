@@ -1,3 +1,4 @@
 {
-	"cSpell.words": ["inicial", "pagar", "receber", "Saldo"]
+	"cSpell.words": ["inicial", "pagar", "receber", "Saldo"],
+	"dotenv.enableAutocloaking": false
 }
