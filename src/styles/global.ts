@@ -28,15 +28,13 @@ export default createGlobalStyle`
     }
   }
 
-  input {
+  input, select {
     background-color: ${(props) => props.theme.colors.black700};
     color: ${(props) => props.theme.colors.white};
     border: none;
     min-height: 1.6875rem;
     border-radius: 0.25rem;
-    padding-left: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
     
     &::placeholder {
       color: ${(props) => props.theme.colors.gray300};
@@ -62,4 +60,33 @@ export default createGlobalStyle`
       font-weight: 500;
     }
   }
+
+  input[type="date"] {
+    ::-webkit-calendar-picker-indicator {
+      background-image: url(/calendar.png);
+      cursor: pointer;
+    }
+  }
+
+  select {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 9.375rem;
+    background-image:
+      linear-gradient(45deg, transparent 50%, ${(props) =>
+				props.theme.colors.primary} 50%),
+      linear-gradient(135deg, ${(props) =>
+				props.theme.colors.primary} 50%, transparent 50%);
+    background-position: 
+      calc(100% - 20px) calc(1em + 2px),
+      calc(100% - 15px) calc(1em + 2px),
+      calc(100% - 0.5em) 0.5em;
+    background-size: 5px 5px, 5px 5px, 1.5em 1.5em;
+    background-repeat: no-repeat;
+    select::-ns-expand {
+      display: none;
+    }
+ }
 `;

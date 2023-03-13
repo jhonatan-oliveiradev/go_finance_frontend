@@ -1,6 +1,7 @@
 import Card from "@/components/Card";
 import Chart from "@/components/Chart";
-import { Container, RightSide } from "./styles";
+import { Container, RightSide } from "../styles/home/home.styles";
+import TableNavbar from "@/components/TableNavbar";
 
 const cardData = [
 	{
