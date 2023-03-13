@@ -6,7 +6,7 @@ import AppTemplate from "@/components/AppTemplate";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "@/styles/global";
 import Head from "next/head";
-import { AuthProvider } from "@/providers/auth";
+import AuthProvider from "@/providers/auth";
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (

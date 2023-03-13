@@ -1,34 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import api from "@/services/api";
+import { ReactNode, useCallback, useEffect, useState } from "react";
+import { LoginCredentials } from "@/types/auth";
+import AuthContext from "@/utils/context";
 import router from "next/router";
-import {
-	ReactNode,
-	createContext,
-	useCallback,
-	useContext,
-	useEffect,
-	useState,
-} from "react";
+import api from "@/services/api";
 
 type AuthProviderProps = {
 	children: ReactNode;
 };
 
-type LoginCredentials = {
-	username: string;
-	password: string;
-};
-
-type AuthContextData = {
-	login(credentials: LoginCredentials): Promise<void>;
-	logout(): void;
-};
-
 type AuthState = {
 	token: string;
 };
-
-const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 const AuthProvider = ({ children }: AuthProviderProps) => {
 	const [origin, setOrigin] = useState("/");
@@ -83,9 +66,4 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
 	);
 };
 
-const useLogin = (): AuthContextData => {
-	const context = useContext(AuthContext);
-	return context;
-};
-
-export { AuthProvider, useLogin };
+export default AuthProvider;

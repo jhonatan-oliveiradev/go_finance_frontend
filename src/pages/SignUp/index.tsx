@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 
+import api from "@/services/api";
 import Spinner from "@/components/UI/Spinner";
 
 import {
@@ -11,7 +12,7 @@ import {
 	ErrorMessage,
 } from "../../styles/auth/auth.styles";
 import logo from "../../assets/logo.svg";
-import api from "@/services/api";
+import { useLogin } from "@/providers/auth";
 
 const SignUp = () => {
 	const [username, setUsername] = useState("");
@@ -22,8 +23,7 @@ const SignUp = () => {
 	const [hasError, setHasError] = useState(false);
 	const [errorMessage, setErrorMessage] = useState("");
 	const router = useRouter();
-
-	const buttonLabel = isLoading ? <Spinner /> : "Cadastrar";
+	const { login } = useLogin();
 
 	const passwordIsValid = password === confirmPassword;
 
@@ -39,7 +39,7 @@ const SignUp = () => {
 				email,
 				password,
 			});
-			router.push("/");
+			await login({ username, password });
 		} catch (err) {
 			if (!passwordIsValid) {
 				setErrorMessage("As senhas devem ser idênticas.");
@@ -75,6 +75,8 @@ const SignUp = () => {
 			setState: setConfirmPassword,
 		},
 	];
+
+	const buttonLabel = isLoading ? <Spinner /> : "Cadastrar";
 
 	return (
 		<Container>

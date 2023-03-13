@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "proxy": "http://api.teste.com.br/v1"
   },
   "dependencies": {
     "@types/axios": "^0.14.0",
