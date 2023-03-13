@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Container, Content } from "../../styles/SignIn/signin.styles";
+import { Container, Content } from "../../styles/auth/auth.styles";
 
 import logo from "../../assets/logo.svg";
 

@@ -15,7 +15,7 @@ export const Content = styled.div`
 	justify-content: center;
 	gap: 2rem;
 	width: 50%;
-	height: 60%;
+	height: 70%;
 	background-color: ${(props) => props.theme.colors.black900};
 	border-radius: 1rem;
 	box-shadow: 0 0 14px ${(props) => props.theme.colors.black900};
