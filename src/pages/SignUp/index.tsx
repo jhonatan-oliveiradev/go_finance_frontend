@@ -11,6 +11,7 @@ import {
 	ErrorMessage,
 } from "../../styles/auth/auth.styles";
 import logo from "../../assets/logo.svg";
+import api from "@/services/api";
 
 const SignUp = () => {
 	const [username, setUsername] = useState("");
@@ -25,7 +26,6 @@ const SignUp = () => {
 	const buttonLabel = isLoading ? <Spinner /> : "Cadastrar";
 
 	const passwordIsValid = password === confirmPassword;
-	const emailIsValid = email.includes("@");
 
 	const signUp = async () => {
 		try {
@@ -34,14 +34,10 @@ const SignUp = () => {
 				setHasError(true);
 				throw Error();
 			}
-			await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user`, {
-				method: "POST",
-				mode: "no-cors",
-				body: JSON.stringify({
-					username,
-					email,
-					password,
-				}),
+			await api.post("/user", {
+				username,
+				email,
+				password,
 			});
 			router.push("/");
 		} catch (err) {

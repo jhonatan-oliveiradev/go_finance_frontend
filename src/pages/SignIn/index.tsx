@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLogin } from "@/providers/auth";
 import { Container, Content } from "../../styles/auth/auth.styles";
 
 import logo from "../../assets/logo.svg";
-import { useLogin } from "@/providers/auth";
 
 const SignIn = () => {
 	const { login } = useLogin();
