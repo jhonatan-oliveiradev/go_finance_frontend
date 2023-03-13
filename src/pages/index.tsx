@@ -1,7 +1,9 @@
 import Card from "@/components/Card";
 import Chart from "@/components/Chart";
 import { Container, RightSide } from "../styles/home/home.styles";
-import TableNavbar from "@/components/TableNavbar";
+import TableContainer from "@/components/TableContainer";
+import TableDetails from "@/components/TableDetails";
+import TableLine from "@/components/TableLine";
 
 const cardData = [
 	{
@@ -18,17 +20,51 @@ const cardData = [
 	},
 ];
 
+const TableData = [
+	{
+		title: "Título 1",
+		description: "Descrição 1",
+	},
+	{
+		title: "Título 2",
+		description: "Descrição 2",
+	},
+	{
+		title: "Título 3",
+		description: "Descrição 3",
+	},
+	{
+		title: "Título 4",
+		description: "Descrição 4",
+	},
+	{
+		title: "Título 5",
+		description: "Descrição 5",
+	},
+];
+
 const Home = () => {
 	return (
 		<>
 			<Container>
-				<Chart />
+				{/* <Chart />
 				<RightSide>
 					{cardData.map((card) => (
 						<Card key={card.title} title={card.title} value={card.value} />
 					))}
 					<button>Download</button>
-				</RightSide>
+				</RightSide> */}
+				<TableContainer>
+					<TableDetails>
+						{TableData.map((data) => (
+							<TableLine
+								key={data.title}
+								title={data.title}
+								description={data.description}
+							/>
+						))}
+					</TableDetails>
+				</TableContainer>
 			</Container>
 		</>
 	);

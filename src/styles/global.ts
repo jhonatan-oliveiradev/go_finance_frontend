@@ -65,6 +65,8 @@ export default createGlobalStyle`
     ::-webkit-calendar-picker-indicator {
       background-image: url(/calendar.png);
       cursor: pointer;
+      border-radius: 0.25rem;
+      padding: 0.5rem 1rem;
     }
   }
 
