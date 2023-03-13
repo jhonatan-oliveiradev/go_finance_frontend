@@ -1,10 +1,20 @@
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container, Content } from "../../styles/auth/auth.styles";
 
 import logo from "../../assets/logo.svg";
+import { useLogin } from "@/providers/auth";
 
 const SignIn = () => {
+	const { login } = useLogin();
+	const [username, setUsername] = useState("");
+	const [password, setPassword] = useState("");
+
+	const handleLogin = () => {
+		login({ username, password });
+	};
+
 	return (
 		<Container>
 			<Content>
@@ -18,9 +28,19 @@ const SignIn = () => {
 					type="text"
 					placeholder="Nome de usuário"
 					title="Digite seu usuário"
+					onChange={(e) => {
+						setUsername(e.target.value);
+					}}
 				/>
-				<input type="password" placeholder="Senha" title="Digite sua senha" />
-				<button>Entrar</button>
+				<input
+					type="password"
+					placeholder="Senha"
+					title="Digite sua senha"
+					onChange={(e) => {
+						setPassword(e.target.value);
+					}}
+				/>
+				<button onClick={handleLogin}>Entrar</button>
 				<p>
 					Ainda não possui uma conta? <Link href="/SignUp">Cadastre-se!</Link>
 				</p>

@@ -34,7 +34,7 @@ const SignUp = () => {
 				setHasError(true);
 				throw Error();
 			}
-			await fetch(`http://localhost:8000/user`, {
+			await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user`, {
 				method: "POST",
 				mode: "no-cors",
 				body: JSON.stringify({
